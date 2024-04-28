@@ -1,0 +1,7 @@
+.payment-btn {
+  @apply p-2 px-4 shadow bg-white;
+}
+
+.active-method {
+  @apply shadow-md text-[#994bff] font-semibold;
+}

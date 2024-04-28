@@ -1,0 +1,12 @@
+input {
+  outline: none;
+  @apply border border-[#44444480]   !text-sm !p-2 rounded shadow;
+}
+
+label {
+  @apply text-xs font-medium;
+}
+
+.input-container {
+  @apply flex flex-col gap-1;
+}

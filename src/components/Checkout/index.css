@@ -1,0 +1,69 @@
+.steps {
+  @apply bg-white p-1.5 text-sm  px-3 z-10 flex gap-2 items-center text-gray-500 shadow;
+}
+
+.active-step {
+  @apply transition-colors duration-300;
+}
+
+.radial-bg {
+  background: radial-gradient(circle at 5% 5%, #99999920 10%, transparent 10.2%)
+      center/cover,
+    radial-gradient(circle at 35% 50%, #99999915 20%, transparent 20.2%)
+      center/cover,
+    radial-gradient(circle at 55% 10%, #99999910 10%, transparent 10.2%)
+      center/cover,
+    radial-gradient(circle at 15% 95%, #99999910 10%, transparent 10.2%)
+      center/cover,
+    radial-gradient(circle at 95% 25%, #99999910 10%, transparent 10.2%)
+      center/cover,
+    radial-gradient(circle at 85% 78%, #99999920 13%, transparent 13.2%)
+      center/cover;
+}
+.anim {
+  background: linear-gradient(to right, #994bff var(--a), #33333320 var(--a));
+}
+
+/* bg-gradient-to-r  from-[#994bff]  
+${activeIndex === 0 && "from-0% to-0%"} ${
+  activeIndex === 1 && "from-50 to-50"
+} ${activeIndex === 2 && "from-100 to-100"}
+to-[#33333320]  */
+
+.cone {
+  @apply font-semibold text-[#994bffee];
+  background: linear-gradient(#ffffff, #ffffff) no-repeat 50% / calc(100% - 3px)
+      calc(100% - 3px),
+    conic-gradient(#994bffee var(--z), #33333320 var(--z));
+
+  animation: cone-anim 0.4s forwards linear;
+}
+
+@property --z {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+@keyframes cone-anim {
+  0% {
+    --z: 0%;
+  }
+  100% {
+    --z: 100%;
+  }
+}
+
+.button {
+  @apply p-1.5 px-5 shadow text-sm rounded flex justify-center items-center gap-1.5 font-semibold border;
+  &:hover {
+    /* @apply; */
+  }
+}
+
+.next {
+  @apply bg-green-950 text-white;
+}
+.back {
+  @apply bg-slate-300;
+}
